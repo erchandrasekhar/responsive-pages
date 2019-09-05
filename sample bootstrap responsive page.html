@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style type="text/css"> 
+  
+  #applicanName,#email,#designation,#ta,#location,#fromDate,#toDate,#da,#grandTotal,#remark,#accomodation,#file,#documentFlage{
+  
+  font-size: 12px;
+  height: 20px;
+  padding: 5px;
+  }
+  
+  .form-control {
+   font-size: 12px;
+  height: 25px;
+  padding: 5px;
+  }
+  
+  
+ 
+  .panel-info>.panel-heading {
+    color: #dedada;
+    background-color: #586eff;
+    border-color: #bce8f1;
+}
+  
+  </style>
+  
+</head>
+<body>
+<br>
+<div class="container">
+      <form>
+           <div class="panel-group">
+    
+    
+      <div class="panel panel-info">
+      <div class="panel-heading">Traveller Details</div>
+      <div class="panel-body">
+      <div class="row">
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="applicanName">Applicant Name&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="applicanName" id="applicanName" value="" class="form-control" placeholder="Enter Applicant Name" readonly>
+         
+          
+  </div>
+  </div>
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="travelRequestId">Travel Request Id&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="travelRequestId" id="travelRequestId" value="" class="form-control" placeholder="Enter Email Id"  readonly>
+  </div>
+  </div>
+  
+ 
+   <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label">Designation&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="designation" id="designation" value="" class="form-control" placeholder="Designation" readonly>
+         
+  </div>
+  </div>
+  
+  </div></div>
+    </div>
+  
+  
+  
+      <div class="panel panel-info">
+      <div class="panel-heading">Approval Details</div>
+      <div class="panel-body">
+      <div class="row">
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="applicanName">Approved By &nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="applicanName" id="applicanName" value="" class="form-control" placeholder="Enter Applicant Name" readonly>
+         
+          
+  </div>
+  </div>
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="travelRequestId">Approved On&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="travelRequestId" id="travelRequestId" value="" class="form-control" placeholder="Enter Email Id"  readonly>
+  </div>
+  </div>
+  
+ 
+   <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label">Approver Comment:&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="designation" id="designation" value="" class="form-control" placeholder="Designation" readonly>
+         
+  </div>
+  </div>
+  
+  </div></div>
+    </div>
+  
+    <div class="panel panel-info">
+      <div class="panel-heading">Basic Details</div>
+      <div class="panel-body">
+      
+      <div class="row">
+    
+    <div class="col-md-8">
+    <div class="form-group">
+    <label class="control-label" for="travellingFor">Travelling For(Tour Programme)&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="owner" id="owner" class="form-control" placeholder="Enter Travelling Reasion" readonly >
+         
+          
+  </div>
+  </div>
+
+ <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="projectIdPk">Project&nbsp;<font size="3" color="red">*</font></label>
+         
+        <input type="text" name="owner" id="owner" class="form-control" placeholder="Enter Travelling Reasion" readonly >
+       
+  </div>
+  </div>
+   
+  </div>
+       <div class="row">
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="fromDate">FomDate&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="fromDate" id="fromDate" class="form-control " placeholder="DD-MM-YYYY" readonly>
+        
+          
+  </div>
+  </div>
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="toDate">ToDate&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="toDate" id="toDate" onblur="grandTotalCalculation();" class="form-control " placeholder="DD-MM-YYYY" readonly>
+  </div>
+  </div>
+  
+  
+  
+  <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label">Location&nbsp;<font size="3" color="red">*</font></label>
+        <input type="text" name="location" id="location" class="form-control" placeholder="Location" readonly> 
+         
+         
+  </div>
+  </div>
+  
+  </div>
+  
+   <div class="row">
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="owner">Traveling Expenses(TA)&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="ta" id="ta" value="" class="form-control" placeholder="Enter Travel Expenses" readonly>
+        
+          
+  </div>
+  </div>
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="da">Daily Allowance(DA)&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="da" id="da" value="" class="form-control" placeholder="Enter daily allowance " readonly>
+  </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label">Accommodation&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="accomodation" id="accomodation" value="" onblur="grandTotalCalculation();" class="form-control" placeholder="Enter Accomodation" readonly>
+  </div>
+  </div>
+ 
+  </div>
+  
+  
+  
+  <div class="row">
+    
+    <div class="col-md-4">
+    <div class="form-group">
+    <label class="control-label" for="GT">Grand Total&nbsp;<font size="3" color="red">*</font></label>
+          <input type="text" name="grandTotal" id="grandTotal" value="" class="form-control" placeholder="Grand Total" required="" readonly>
+          
+  </div>
+  </div>
+    
+    
+    <div class="col-md-8">
+    <div class="form-group">
+    <label class="control-label" for="remark">Remarks (if any):</label>
+        <input type="text" name="remark" id="remark" class="form-control" placeholder="" readonly> 
+          <!--  <textarea rows="" cols="" name="remark" id="remark" class="form-control" placeholder="" style="resize: vertical;" maxlength="255" placeholder="Enter Travelling Reasion"></textarea> -->
+  </div>
+  </div> 
+  
+ </div>
+ 
+ 
+    
+  
+    
+  
+ 
+ 
+ 
+  
+ 
+ 
+ <br>
+     <div class="row">
+    
+    <div class="col-md-4">
+    
+  </div>
+    
+    <div class="col-md-4">
+         <div class="row" style="text-align: center;">
+                  
+        	    <button type="submit" class="btn btn-success" id="btnSave" style="border-radius:0px;">Save
+        		<span class="fa fa-check-circle"></span>
+        		</button>
+        		<button type="reset" class="btn btn-danger" style="border-radius:0px;">Reset
+        		<span class="fa fa-refresh"></span>
+        		</button>
+        
+              </div>
+  </div>
+
+  <div class="col-md-4">
+    
+  </div>
+ 
+  </div>
+   </div>
+    </div>
+   
+    
+  </div>
+     </form>
+</div>
+
+</body>
+</html>
